@@ -35,6 +35,14 @@ movesList = [[9,9,9],\
              [9,9,9],\
              [9,9,9],\
              [9,9,9]]
+print "Starting values:\n"
+print "moves possible"
+print movesPossible
+print "game board"
+print gameBoard
+print "moves list:"
+print movesList
+print "\n\n"
 
 def checkMoves(movesPossible, gameBoard, movesList):
     for y in range(0,5):
@@ -70,14 +78,26 @@ def checkMoves(movesPossible, gameBoard, movesList):
                 print movesList[movesPossible][1], movesList[movesPossible][2] #DEBUG
             x = x + 1
         y = y + 1
+    print "moves possible:"
     print movesPossible
     return movesPossible, gameBoard, movesList
 
 def pickMove(movesPossible, movesList, yPicked, xPicked, dPicked):
     move = random.randint(0, movesPossible)
+    print "move"
     print move
     yPicked = movesList[move][1]
     xPicked = movesList[move][2]
     dPicked = movesList[move][0]
     return yPicked, xPicked
 
+print "Calling checkMoves()\n"
+movesPossible, gameBoard, movesList = checkMoves(movesPossible, gameBoard, movesList)
+print "Called checkMoves()\n"
+
+print "moves possible"
+print movesPossible
+print "game board"
+print gameBoard
+print "moves list:"
+print movesList
